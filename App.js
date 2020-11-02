@@ -1,13 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, SafeAreaView, Image } from 'react-native';
 
 export default function App() {
+  console.log("App executed")
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text>Hello React Native</Text>
+      <TouchableHighlight onPress={() => console.log("image tapped")}>
+        <Image 
+          fadeDuration = {1000}
+          source={{
+            width: 200,
+            height: 300,
+            uri:"https://picsum.photos/200/300"
+          }} 
+        />
+      </TouchableHighlight>
+    </SafeAreaView>
   );
 }
 
